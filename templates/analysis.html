@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Analysis Output Images</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #ccc;
-        }
-        img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <h1>Analysis Output Images</h1>
     <table>
         <thead>
@@ -62,5 +41,4 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+{% endblock %}

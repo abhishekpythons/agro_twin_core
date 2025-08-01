@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgroTwin - Agriculture Digital Twin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --accent: #81c784;
+            --background: #f5fbe7;
+            --tech-blue: #1976d2;
+            --text: #222;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+        }
+        header {
+            background: linear-gradient(90deg, var(--primary) 70%, var(--tech-blue) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 10px 20px;
+        }
+        .logo-image {
+            width: 10vh;
+            height: 10vh;
+            border-radius: 0;
+            margin-right: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(44, 62, 80, 0.08);
+            padding: 2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .hero img {
+            width: 120px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        .hero-text p {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--tech-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img class="logo-image" src="{% static 'agro-twin-logo-1.png' %}" alt="agroTwinLogo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Research</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="AgroTwin Logo">
+            <div class="hero-text">
+                <h1>AgroTwin</h1>
+                <p>Bridging Nature and Technology for Smart Agriculture</p>
+            </div>
+        </section>
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </main>
+    <footer>
+        &copy; {{ year }} AgroTwin Research Prototype. All rights reserved.
+    </footer>
+</body>
+</html>

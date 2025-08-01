@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Output Images</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analysis Output Images</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NDVI</th>
+                <th>NDMI</th>
+                <th>LST</th>
+                <th>Rainfall</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in images %}
+                <tr>
+                    <td>
+                        {% if row.NDVI %}
+                            <img src="{{ row.NDVI }}" alt="NDVI">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if row.NDMI %}
+                            <img src="{{ row.NDMI }}" alt="NDMI">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if row.LST %}
+                            <img src="{{ row.LST }}" alt="LST">
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if row.Rainfall %}
+                            <img src="{{ row.Rainfall }}" alt="Rainfall">
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No images to display.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

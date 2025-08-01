@@ -4,23 +4,33 @@
 {% block content %}
 
 
-<section class="hero">
-    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="AgroTwin Logo">
-    <div class="hero-text">
-        <h1>AgroTwin</h1>
-        <p>Bridging Nature and Technology for Smart Agriculture</p>
+<section class="container-fluid p-0">
+  <div class="row g-0" style="min-height: 100vh;">
+    
+    <!-- Left: Image Section -->
+    <div class="col-md-6 d-none d-md-block">
+      <div style="
+        background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;">
+      </div>
     </div>
-</section>
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-            <h1 class="display-4">Welcome to AgroTwin Core</h1>
-            <p class="lead">Your platform for smart agriculture solutions.</p>
-            <hr class="my-4">
-            <p>Get started by exploring our features and tools designed to help you manage your farm efficiently.</p>
-            <a class="btn btn-success btn-lg" href="/dashboard" role="button">Go to Dashboard</a>
-        </div>
+    <!-- Right: Text Section -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center" 
+         style="background: linear-gradient(to right, #d7f7d2, #d2f0f7); padding: 60px 30px;">
+      <div class="text-center text-md-start">
+        <h1 class="display-4 fw-bold">
+  <span style="color: var(--primary);">Agro</span><span style="color: var(--tech-blue);">Twin</span>
+</h1>
+
+       <p class="lead fw-bold text-dark">Bridging Nature and Technology for Smart Agriculture.</p>
+        <p class="text-dark">AgroTwin is your intelligent partner for precision farming. Harness the power of satellite data and AI to monitor crop health, optimize irrigation, and improve yields — all through one seamless platform.</p>
+        <a href="/dashboard" class="btn btn-success btn-lg mt-3">Go to Dashboard</a>
+      </div>
     </div>
-</div>
+
+  </div>
+</section>
 {% endblock %}
